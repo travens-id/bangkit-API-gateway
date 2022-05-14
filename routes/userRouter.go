@@ -2,7 +2,7 @@ package routes
 
 import (
 	controller "travens/controllers"
-	middleware "travens/middleware"
+	"travens/middleware"
 
 	"github.com/gin-gonic/gin"
 )
