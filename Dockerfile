@@ -1,15 +1,11 @@
 FROM golang:1.18
 
-WORKDIR /app
+WORKDIR /bangkit-API-gateway
 
-COPY go.mod ./
-COPY go.sum ./
-RUN go mod download
+COPY . .
 
-COPY *.go ./
-
-RUN go build -o /docker-gs-ping
+RUN go run main.go
 
 EXPOSE 8080
 
-CMD [ "/docker-gs-ping" ]
+CMD [ "main.go" ]
