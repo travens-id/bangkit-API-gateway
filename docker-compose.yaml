@@ -1,0 +1,8 @@
+version: "3.9" 
+services:
+   web:
+       build: .
+       ports:
+           - "12345:12345"
+       environment:
+           MONGODB_URI: your_URI_here
