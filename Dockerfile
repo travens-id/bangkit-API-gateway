@@ -1,9 +1,16 @@
-FROM golang:1.18
+FROM golang:1.18-alpine
 
 WORKDIR /app
 
-COPY main.go /app/main.go
+COPY go.mod ./
+COPY go.sum ./
 
-RUN apt-get update
+RUN go mod download
 
-CMD ["go","run","main.go"]
+COPY *.go ./
+
+RUN go build -o /bangkit-api-gateway
+
+EXPOSE 8080
+
+CMD ["/bangkit-api-gateway"]
