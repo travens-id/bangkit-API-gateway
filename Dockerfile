@@ -9,8 +9,8 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /bangkit-api-gateway
+RUN go build -o /bangkit-API-gateway
 
 EXPOSE 8080
 
-CMD ["/bangkit-api-gateway"]
+CMD ["/bangkit-API-gateway"]
